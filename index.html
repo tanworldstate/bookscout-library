@@ -15,6 +15,7 @@
 <p class="tagline">Search real books, save favorites, track reading status, and export your list.</p>
 </div>
 </header>
+  
 <main class="layout">
 <section class="panel search-panel">
 <h2>Find Books</h2>
@@ -30,15 +31,18 @@
 <button type="submit">Search</button>
 </div>
 </form>
+  
 <div class="quick-searches" aria-label="Quick searches">
 <button class="quick-btn" data-query="middle school adventure">Adventure</button>
 <button class="quick-btn" data-query="science for kids">Science</button>
 <button class="quick-btn" data-query="fantasy">Fantasy</button>
 <button class="quick-btn" data-query="history for students">History</button>
 </div>
+  
 <p id="searchStatus" class="status">Search for a book to begin.</p>
 <div id="results" class="results-grid"></div>
 </section>
+  
 <aside class="panel list-panel">
 <div class="list-header">
 <div>
@@ -52,6 +56,7 @@
 <option value="Finished">Finished</option>
 </select>
 </div>
+  
 <div class="actions">
 <button id="exportBtn" type="button">Export JSON</button>
 <button id="importBtn" type="button">Import JSON</button>
