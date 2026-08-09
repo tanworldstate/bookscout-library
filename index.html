@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>BookScout</title>
+<link rel="stylesheet" href="style.css" />
+<script src="script.js" defer></script>
+</head>
+<body>
+<header class="hero">
+<div>
+<p class="eyebrow">API-Powered Reading App</p>
+<h1>BookScout</h1>
+<p class="tagline">Search real books, save favorites, track reading status, and export your list.</p>
+</div>
+</header>
+<main class="layout">
+<section class="panel search-panel">
+<h2>Find Books</h2>
+<form id="searchForm" class="search-form">
+<label for="searchInput">Search by title, author, or topic</label>
+<div class="search-row">
+<input id="searchInput" type="text" placeholder="Try: Percy Jackson, space, mystery" required />
+<select id="sortSelect" aria-label="Sort results">
+<option value="relevance">Relevance</option>
+<option value="new">Newest</option>
+<option value="old">Oldest</option>
+</select>
+<button type="submit">Search</button>
+</div>
+</form>
+<div class="quick-searches" aria-label="Quick searches">
+<button class="quick-btn" data-query="middle school adventure">Adventure</button>
+<button class="quick-btn" data-query="science for kids">Science</button>
+<button class="quick-btn" data-query="fantasy">Fantasy</button>
+<button class="quick-btn" data-query="history for students">History</button>
+</div>
+<p id="searchStatus" class="status">Search for a book to begin.</p>
+<div id="results" class="results-grid"></div>
+</section>
+<aside class="panel list-panel">
+<div class="list-header">
+<div>
+<h2>My Reading List</h2>
+<p id="listStats" class="muted">0 books saved</p>
+</div>
+<select id="statusFilter" aria-label="Filter reading list">
+<option value="all">All</option>
+<option value="Want to Read">Want to Read</option>
+<option value="Reading">Reading</option>
+<option value="Finished">Finished</option>
+</select>
+</div>
+<div class="actions">
+
+<button id="exportBtn" type="button">Export JSON</button>
+<button id="importBtn" type="button">Import JSON</button>
+<input id="importFile" type="file" accept="application/json" hidden />
+</div>
+<ul id="savedList" class="saved-list"></ul>
+</aside>
+</main>
+<footer class="footer">
+<p>Built with HTML, CSS, JavaScript, the Open Library Search API, and AI as a learning coach.</p>
+</footer>
+</body>
+</html>
