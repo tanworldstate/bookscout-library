@@ -262,3 +262,33 @@ return String(value)
 .replaceAll('"', "&quot;")
 .replaceAll("'", "&#039;");
 }
+const savedBook = {
+  key: book.key,
+  title: book.title || "Untitled book",
+  authors: formatAuthors(book.author_name),
+  year: book.first_publish_year || "Unknown year",
+  coverId: book.cover_i || null,
+  editionCount: book.edition_count || null,
+  status: "Want to Read",
+  notes: "",
+  rating: 0,  // Add this line
+  addedAt: new Date().toISOString()
+};
+*****
+  savedList.addEventListener("click", handleStarClick);
+
+function handleStarClick(event) {
+  const star = event.target.closest(".star");
+  if (!star) return;
+  
+  const rating = parseInt(star.dataset.value);
+  const ratingContainer = star.closest(".star-rating");
+  const key = ratingContainer.dataset.key;
+  
+  const book = readingList.find((item) => item.key === key);
+  if (!book) return;
+  
+  book.rating = rating;
+  saveReadingList();
+  renderReadingList();
+}
