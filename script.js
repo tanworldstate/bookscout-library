@@ -46,7 +46,6 @@ const response = await fetch(url);
 if (!response.ok) {
 throw new Error(`Open Library returned status ${response.status}`);
 }
-
 const data = await response.json();
 lastResults = data.docs || [];
 renderResults(lastResults, data.numFound || 0);
@@ -109,7 +108,6 @@ function addBookToReadingList(book) {
 if (readingList.some((item) => item.key === book.key)) return;
 const savedBook = {
 key: book.key,
-
 title: book.title || "Untitled book",
 authors: formatAuthors(book.author_name),
 year: book.first_publish_year || "Unknown year",
@@ -174,7 +172,6 @@ function handleSavedChange(event) {
 const select = event.target.closest("select[data-action='status']");
 if (!select) return;
 const book = readingList.find((item) => item.key === select.dataset.key);
-
 if (!book) return;
 book.status = select.value;
 saveReadingList();
@@ -276,18 +273,14 @@ const savedBook = {
 };
 *****
   savedList.addEventListener("click", handleStarClick);
-
 function handleStarClick(event) {
   const star = event.target.closest(".star");
   if (!star) return;
-  
   const rating = parseInt(star.dataset.value);
   const ratingContainer = star.closest(".star-rating");
   const key = ratingContainer.dataset.key;
-  
   const book = readingList.find((item) => item.key === key);
   if (!book) return;
-  
   book.rating = rating;
   saveReadingList();
   renderReadingList();
