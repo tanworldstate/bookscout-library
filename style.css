@@ -117,7 +117,6 @@ margin: 14px 0;
 background: #eef2ff;
 color: var(--primary-dark);
 }
-
 .status,
 .muted {
 color: var(--muted);
@@ -182,7 +181,6 @@ width: 52px;
 height: 78px;
 border-radius: 8px;
 object-fit: cover;
-
 background: #f1f5f9;
 display: grid;
 place-items: center;
@@ -217,25 +215,21 @@ grid-template-columns: 1fr;
   gap: 4px;
   margin: 8px 0;
 }
-
 .star {
   font-size: 20px;
   color: #cbd5e1;
   cursor: pointer;
   transition: color 0.2s;
 }
-
 .star:hover,
 .star[data-filled="true"] {
   color: #fbbf24;
 }
-
 .rating-display {
   margin: 4px 0;
   font-size: 14px;
   color: var(--muted);
 }
-
 .rating-value {
   font-weight: 700;
   color: #fbbf24;
