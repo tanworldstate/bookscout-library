@@ -212,3 +212,31 @@ grid-template-columns: 1fr;
 grid-template-columns: 1fr;
   }
 }
+.star-rating {
+  display: flex;
+  gap: 4px;
+  margin: 8px 0;
+}
+
+.star {
+  font-size: 20px;
+  color: #cbd5e1;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.star:hover,
+.star[data-filled="true"] {
+  color: #fbbf24;
+}
+
+.rating-display {
+  margin: 4px 0;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.rating-value {
+  font-weight: 700;
+  color: #fbbf24;
+}
