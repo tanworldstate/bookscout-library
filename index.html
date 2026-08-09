@@ -66,3 +66,9 @@
 </footer>
 </body>
 </html>
+<div class="star-rating" data-key="${escapeHtml(book.key)}">
+  ${[1, 2, 3, 4, 5].map(star => `
+    <span class="star" data-value="${star}" ${book.rating >= star ? 'data-filled="true"' : ''}>★</span>
+  `).join('')}
+</div>
+<p class="rating-display"><span class="rating-value">${book.rating || 0}</span>/5</p>
